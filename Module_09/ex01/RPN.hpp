@@ -37,11 +37,15 @@ class RPN
 		// Exceptions
 		class InvalidChar : public std::exception
 		{
-			const char * what() const throw();	
+			const char * what() const throw();
 		};
 		class InvalidFormat : public std::exception
 		{
-			const char * what() const throw();	
+			const char * what() const throw();
+		};
+		class DevideByZero : public std::exception
+		{
+			const char * what() const throw();
 		};
 
 	private:

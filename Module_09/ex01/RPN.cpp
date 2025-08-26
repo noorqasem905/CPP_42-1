@@ -60,6 +60,8 @@ int	RPN::doMath(const char *input)
 				_num.top() -= tmp;
 			else if (input[i] == '*')
 				_num.top() *= tmp;
+			else if (input[i] == '/' && tmp == 0)
+				throw RPN::DevideByZero();
 			else if (input[i] == '/')
 				_num.top() /= tmp;
 		}
@@ -88,3 +90,9 @@ const char * RPN::InvalidFormat::what() const throw()
 {
 	return "Invalid format";
 }
+
+const char * RPN::DevideByZero::what() const throw()
+{
+	return "You cannot devide by zero";
+}
+
