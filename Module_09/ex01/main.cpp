@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	try
 	{
 		RPN ob;
-		int	res;
+		float	res;
 		res = ob.doMath(av[1]);
 		std::cout << res << std::endl;
 	}

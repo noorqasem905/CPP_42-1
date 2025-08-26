@@ -32,7 +32,7 @@ class RPN
 		RPN & operator=(const RPN &assign);
 
 		// Member functions
-		int	doMath(const char *input);
+		float	doMath(const char *input);
 
 		// Exceptions
 		class InvalidChar : public std::exception
@@ -49,7 +49,7 @@ class RPN
 		};
 
 	private:
-		std::stack<int>		_num;
+		std::stack<float>		_num;
 };
 
 #endif

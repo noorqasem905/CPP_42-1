@@ -37,10 +37,10 @@ RPN::~RPN()
 }
 
 // Member functions
-int	RPN::doMath(const char *input)
+float	RPN::doMath(const char *input)
 {
-	_num = std::stack<int>();
-	int tmp;
+	_num = std::stack<float>();
+	float tmp;
 
 	for (int i = 0; input[i]; i++)
 	{
