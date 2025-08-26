@@ -17,12 +17,12 @@
 # include <stack>
 # include <deque>
 
-template <typename T>
-class MutantStack : public std::stack<T, std::deque<T> >
+template <typename T, typename Container = std::deque<T> >
+class MutantStack : public std::stack<T, Container >
 {
 	public:
-		typedef typename std::deque<T>::iterator iterator;
-		typedef typename std::deque<T>::reverse_iterator reverse_iterator;
+		typedef typename Container::iterator iterator;
+		typedef typename Container::reverse_iterator reverse_iterator;
 
 		// Constructors
 		MutantStack();

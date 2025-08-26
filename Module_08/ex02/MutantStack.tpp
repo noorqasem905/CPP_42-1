@@ -16,79 +16,79 @@
 # include "MutantStack.hpp"
 
 // Constructors
-template <typename T>
-MutantStack<T>::MutantStack()
+template <typename T, typename Container>
+MutantStack<T, Container>::MutantStack()
 {
 }
 
-template <typename T>
-MutantStack<T>::MutantStack(const MutantStack &copy) : std::stack<T>(copy)
+template <typename T, typename Container>
+MutantStack<T, Container>::MutantStack(const MutantStack &copy) : std::stack<T, Container>(copy)
 {
 }
 
 
 // Destructor
-template <typename T>
-MutantStack<T>::~MutantStack()
+template <typename T, typename Container>
+MutantStack<T, Container>::~MutantStack()
 {
 }
 
 
 // Member functions
-template <typename T>
-typename std::deque<T>::iterator MutantStack<T>::begin()
+template <typename T, typename Container>
+typename Container::iterator MutantStack<T, Container>::begin()
 {
 	return (this->c.begin());
 }
 
-template <typename T>
-const typename std::deque<T>::iterator MutantStack<T>::begin() const
+template <typename T, typename Container>
+const typename Container::iterator MutantStack<T, Container>::begin() const
 {
 	return (this->c.begin());
 }
 
-template <typename T>
-typename std::deque<T>::iterator MutantStack<T>::end()
+template <typename T, typename Container>
+typename Container::iterator MutantStack<T, Container>::end()
 {
 	return (this->c.end());
 }
 
-template <typename T>
-const typename std::deque<T>::iterator MutantStack<T>::end() const
+template <typename T, typename Container>
+const typename Container::iterator MutantStack<T, Container>::end() const
 {
 	return (this->c.end());
 }
 
 
-template <typename T>
-typename std::deque<T>::reverse_iterator MutantStack<T>::rbegin()
+template <typename T, typename Container>
+typename Container::reverse_iterator MutantStack<T, Container>::rbegin()
 {
 	return (this->c.rbegin());
 }
 
-template <typename T>
-const typename std::deque<T>::reverse_iterator MutantStack<T>::rbegin() const
+template <typename T, typename Container>
+const typename Container::reverse_iterator MutantStack<T, Container>::rbegin() const
 {
 	return (this->c.rbegin());
 }
 
-template <typename T>
-typename std::deque<T>::reverse_iterator MutantStack<T>::rend()
+template <typename T, typename Container>
+typename Container::reverse_iterator MutantStack<T, Container>::rend()
 {
 	return (this->c.rend());
 }
 
-template <typename T>
-const typename std::deque<T>::reverse_iterator MutantStack<T>::rend() const
+template <typename T, typename Container>
+const typename Container::reverse_iterator MutantStack<T, Container>::rend() const
 {
 	return (this->c.rend());
 }
 
 // Operators
-template <typename T>
-MutantStack<T> & MutantStack<T>::operator=(const MutantStack<T> &assign)
+template <typename T, typename Container>
+MutantStack<T, Container> & MutantStack<T, Container>::operator=(const MutantStack<T, Container> &assign)
 {
-	std::stack<T>::operator=(assign);
+	std::stack<T, Container>::operator=(assign);
 	return *this;
 }
 #endif
